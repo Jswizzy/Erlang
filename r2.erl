@@ -6,6 +6,8 @@
 map(_, []) -> [];
 map(F, [H|T]) -> [F(H)|map(F,T)].
 
+%% map tail end recursive
+
 tmap(F, L) -> lists:reverse(tmap(F, L, [])).
 
 tmap(_, [], Acc) -> Acc;
